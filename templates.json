@@ -2,10 +2,10 @@
   {
     "type": 1,
     "title": "Zeebe Standalone Broker - latest",
-    "description": "Zeebe Workflow Engine with a single processing node",
+    "description": "Zeebe workflow engine with a single processing node",
     "categories": ["workflow", "automation"],
     "platform": "linux",
-    "logo": "https://pihme.github.io/zeebe-portainer-templates/assets/zeebe-icon.svg",
+    "logo": "https://pihme.github.io/zeebe-portainer-templates/assets/zeebe-icon.png",
     "image": "camunda/zeebe:latest",
     "ports": [
       "26500/tcp"
