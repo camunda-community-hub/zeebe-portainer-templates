@@ -39,6 +39,5 @@
       "url": "https://github.com/zeebe-io/zeebe-docker-compose",
       "stackfile": "operate/docker-compose.yml"
     }
-  },
-
+  }
 ]
