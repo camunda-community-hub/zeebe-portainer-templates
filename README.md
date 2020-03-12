@@ -1,6 +1,6 @@
 ## About
-This project provides portainer templates for Zeebe.
+This project provides [Portainer](https://www.portainer.io/) container templates for [Zeebe](https://zeebe.io/).
 
-Portainer allows you to view the containers running on a Docker host.
-
-Zeebe allows you to run workflows.
+# templates
+* Zeebe Standalone Broker (latest) - Zeebe workflow engine with a single processing node
+* Zeebe Broker + Operate - Zeebe workflow engine with a single processing node and Operate frontend
