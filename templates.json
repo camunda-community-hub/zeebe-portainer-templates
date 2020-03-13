@@ -1,7 +1,7 @@
 [
   {
     "type": 1,
-    "name": "zeebe-broker",
+    "name": "zeebe-broker-latest",
     "title": "Zeebe Standalone Broker (latest)",
     "description": "Zeebe workflow engine with a single broker",
     "categories": ["workflow", "automation"],
@@ -14,7 +14,7 @@
   },
   {
     "type": 1,
-    "name": "zeebe-broker",
+    "name": "zeebe-broker-0.22.2",
     "title": "Zeebe Standalone Broker (0.22.2)",
     "description": "Zeebe workflow engine with a single broker",
     "categories": ["workflow", "automation"],
@@ -27,7 +27,7 @@
   },
   {
     "type": 3,
-    "name": "zeebe-cluster-s",
+    "name": "zeebe-cluster-s-0.22.2",
     "title": "Zeebe Cluster - S (0.22.2)",
     "description": "Small Zeebe workflow engine cluster with three brokers and a gateway",
     "note": "Warning: Give Docker at least 8 GB of RAM, otherwise system might become unresponsive",

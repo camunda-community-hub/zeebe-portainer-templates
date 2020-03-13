@@ -27,6 +27,9 @@ Assuming you have Docker and Portainer set up and running:
 #### Optional Step
 Before deploying the template, you can select _Show advanced options_. This allows you, among others, to specify the port mapping.
 
+#### Troubleshooting
+The most common reason why a deployment fails is that the port `26500` or the name of the container is already in use. You can modify both on the screen where you do the deployment.
+
 #### Restoring default templates
 1. Open Portainer web console
 1. Click on _Settings_
