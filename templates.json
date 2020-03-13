@@ -55,16 +55,16 @@
   },
   {
     "type": 3,
-    "name": "zeebe-broker-operate",
-    "title": "BROKEN - Zeebe Broker + Operate",
-    "description": "Zeebe workflow engine with a single processing node and Operate frontend",
+    "name": "zeebe-broker-operate-0.23.0-alpha2",
+    "title": "BROKEN - Zeebe Broker + Operate (0.23.0-alpha2)",
+    "description": "Zeebe workflow engine with a single broker and Operate frontend",
     "note": "This Operate Trial Version is for testing and non-production use only. The General Terms and Conditions for the Operate Trial Version are available here: https://zeebe.io/legal/operate-evaluation-license/",
     "categories": ["workflow", "automation"],
     "platform": "linux",
     "logo": "https://pihme.github.io/zeebe-portainer-templates/assets/zeebe-icon.png",
     "repository": {
-      "url": "https://github.com/zeebe-io/zeebe-docker-compose",
-      "stackfile": "operate/docker-compose.yml"
+      "url": "https://github.com/pihme/zeebe-portainer-templates",
+      "stackfile": "stacks/broker_operate/docker-compose-0.23.0-alpha2.yml"
     }
   }
 ]

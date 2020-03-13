@@ -1,0 +1,75 @@
+version: "2"
+
+networks:
+  zeebe_network:
+
+volumes:
+  zeebe_data:
+  zeebe_elasticsearch_data:
+
+services:
+  zeebe:
+    image: camunda/zeebe:0.23.0-alpha2
+    environment:
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_CLASSNAME=io.zeebe.exporter.ElasticsearchExporter
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_URL=http://elasticsearch:9200
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_BULK_DELAY=5
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_BULK_SIZE=1000
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_PREFIX=zeebe-record
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_CREATETEMPLATE=true
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_COMAND=false
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_EVENT=true
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_REJECTION=false
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_DEPLOYMENT=true
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_INCIDENT=true
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_JOB=true
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_MESSAGE=false
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_MESSAGESUBSCRIPTION=false
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_RAFT=false
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_WORKFLOWINSTANCE=true
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_INDEX_WORKFLOWINSTANCESUBSCRIPTION=false
+    ports:
+      - "26500:26500"
+      - "9600:9600"
+    volumes:
+      - zeebe_data:/usr/local/zeebe/data
+    depends_on:
+      - elasticsearch
+    networks:
+      - zeebe_network
+  operate:
+    image: camunda/operate:0.23.0-alpha2
+    environment:
+      - CAMUNDA_OPERATE_ELASTICSEARCH_CLUSTERNAME=elasticsearch
+      - CAMUNDA_OPERATE_ELASTICSEARCH_HOST=elasticsearch
+      - CAMUNDA_OPERATE_ELASTICSEARCH_PORT=9200
+      - CAMUNDA_OPERATE_ZEEBE_BROKERCONTACTPOINT=zeebe:26500
+      - CAMUNDA_OPERATE_ZEEBEELASTICSEARCH_CLUSTERNAME=elasticsearch
+      - CAMUNDA_OPERATE_ZEEBEELASTICSEARCH_HOST=elasticsearch
+      - CAMUNDA_OPERATE_ZEEBEELASTICSEARCH_PORT=9200
+      - CAMUNDA_OPERATE_ZEEBEELASTICSEARCH_PREFIX=zeebe-record
+      - LOGGING_LEVEL_ROOT=INFO
+      #Spring Boot Actuator endpoints to be exposed
+      - MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,info,conditions,configprops,prometheus
+    ports:
+      - "8080:8080"
+    networks:
+      - zeebe_network
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.7.1
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+      - cluster.name=elasticsearch
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - zeebe_elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      - zeebe_network
+  kibana:
+    image: docker.elastic.co/kibana/kibana-oss:6.7.1
+    ports:
+      - "5601:5601"
+    networks:
+      - zeebe_network
