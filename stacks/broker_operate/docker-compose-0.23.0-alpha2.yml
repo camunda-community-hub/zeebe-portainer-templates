@@ -3,10 +3,6 @@ version: "2"
 networks:
   zeebe_network:
 
-volumes:
-  zeebe_data:
-  zeebe_elasticsearch_data:
-
 services:
   zeebe:
     container_name: zeebe_broker-operate_broker_0.23.0-alpha2
@@ -32,8 +28,6 @@ services:
     ports:
       - "26500:26500"
       - "9600:9600"
-    volumes:
-      - zeebe_data:/usr/local/zeebe/data
     depends_on:
       - elasticsearch
     networks:
@@ -68,8 +62,6 @@ services:
       - discovery.type=single-node
       - cluster.name=elasticsearch
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-    volumes:
-      - zeebe_elasticsearch_data:/usr/share/elasticsearch/data
     networks:
       - zeebe_network
   kibana:

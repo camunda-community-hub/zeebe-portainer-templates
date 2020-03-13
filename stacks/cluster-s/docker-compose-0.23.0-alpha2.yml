@@ -19,7 +19,7 @@ services:
     networks:
       - zeebe_network
   node0:
-    container_name:  zeebe_cluster-s_broker1_0.23.0-alpha2
+    container_name:  zeebe_cluster-s_broker0_0.23.0-alpha2
     image: camunda/zeebe:0.23.0-alpha2
     environment:
       - ZEEBE_LOG_LEVEL=info
@@ -33,7 +33,7 @@ services:
     networks:
       - zeebe_network
   node1:
-    container_name: zeebe_cluster-s_broker2_0.23.0-alpha2
+    container_name: zeebe_cluster-s_broker1_0.23.0-alpha2
     image: camunda/zeebe:0.23.0-alpha2
     environment:
       - ZEEBE_LOG_LEVEL=info
