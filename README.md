@@ -4,8 +4,8 @@ This project provides [Portainer](https://www.portainer.io/) container templates
 These templates are intended to quickly spin up a Zeebe node or cluster and take it for a test drive. They are not intended or recommended for production.
 
 ### Templates
-* Zeebe Standalone Broker (latest) - Zeebe workflow engine with a single broker
-* Zeebe Cluster S - Small Zeebe workflow engine cluster with three brokers and a gateway
+* Zeebe Standalone Broker (latest, 0.22.2) - Zeebe workflow engine with a single broker
+* Zeebe Cluster S (0.22.2) - Small Zeebe workflow engine cluster with three brokers and a gateway
 
 ### Broken templates (a.k.a work in progress)
 * Zeebe Broker + Operate - Zeebe workflow engine with a broker and Operate frontend
@@ -34,4 +34,10 @@ Before deploying the template, you can select _Show advanced options_. This allo
 1. Click _Save Settings_
 
 ### Next steps
-Now that you have Zeebe running in Docker, check which port is exposed to the host. Use this port to connect your clients to Zeebe.
+Now that you have Zeebe running in Docker, you can direct a [client]([https://docs.zeebe.io/clients/index.html) at it and start experimenting.
+All templates are configured to expose port `26500` for clients to connect to.
+
+Later, if you want to gain more control over how Zeebe is deployed, you might want to look at:
+* [zeebe-docker-compose](https://github.com/zeebe-io/zeebe-docker-compose): Which contains customizable docker compose files
+* [zeeb-helm](https://helm.zeebe.io/): Which contains helm charts to deploy Zeebe to Kubernetes
+
