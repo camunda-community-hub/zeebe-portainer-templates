@@ -3,12 +3,16 @@ This project provides [Portainer](https://www.portainer.io/) container templates
 
 These templates are intended to quickly spin up a Zeebe node or cluster and take it for a test drive. They are not intended or recommended for production.
 
+![Demo of portainer templates](assets/demo.gif "Demo")
+
 ### Templates
 * Zeebe Standalone Broker (latest, 0.22.2) - Zeebe workflow engine with a single broker
 * Zeebe Cluster S (0.23.0-alpha2, 0.22.2) - Small Zeebe workflow engine cluster with three brokers and a gateway
 * Zeebe Broker + Operate (0.23.0-alpha2) - Zeebe workflow engine with a broker and Operate frontend (and elasticsearch, Kibana as part of the backend)
 
 ### Usage
+![Usage of portainer templates](assets/usage.gif "Usage")
+
 Assuming you have Docker and Portainer set up and running:
 
 1. Open Portainer web console
