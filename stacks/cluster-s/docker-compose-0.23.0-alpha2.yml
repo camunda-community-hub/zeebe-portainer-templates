@@ -1,0 +1,62 @@
+version: "2"
+
+networks:
+  zeebe_network:
+    driver: bridge
+
+services:
+  gateway:
+    container_name: gateway-0.23.0-alpha2
+    image: camunda/zeebe:0.23.0-alpha2
+    environment:
+      - ZEEBE_LOG_LEVEL=info
+      - ZEEBE_STANDALONE_GATEWAY=true
+      - ZEEBE_GATEWAY_CLUSTER_CONTACTPOINT=node0:26502
+      - ZEEBE_GATEWAY_CLUSTER_HOST=gateway
+      - ZEEBE_GATEWAY_CLUSTER_PORT=26502
+    ports:
+      - "26500:26500"
+    networks:
+      - zeebe_network
+  node0:
+    container_name: zeebe_broker_1-0.23.0-alpha2
+    image: camunda/zeebe:0.23.0-alpha2
+    environment:
+      - ZEEBE_LOG_LEVEL=info
+      - ZEEBE_BROKER_CLUSTER_NODEID=0
+      - ZEEBE_BROKER_CLUSTER_PARTITIONSCOUNT=3
+      - ZEEBE_BROKER_CLUSTER_CLUSTERSIZE=3
+      - ZEEBE_BROKER_CLUSTER_REPLICATIONFACTOR=3
+      - ZEEBE_BROKER_CLUSTER_INITIALCONTACTPOINTS=node-0:26502
+    ports:
+      - "26600:26500"
+    networks:
+      - zeebe_network
+  node1:
+    container_name: zeebe_broker_2-0.23.0-alpha2
+    image: camunda/zeebe:0.23.0-alpha2
+    environment:
+      - ZEEBE_LOG_LEVEL=info
+      - ZEEBE_BROKER_CLUSTER_NODEID=1
+      - ZEEBE_BROKER_CLUSTER_PARTITIONSCOUNT=3
+      - ZEEBE_BROKER_CLUSTER_CLUSTERSIZE=3
+      - ZEEBE_BROKER_CLUSTER_REPLICATIONFACTOR=3
+      - ZEEBE_BROKER_CLUSTER_INITIALCONTACTPOINTS=node-0:26502
+    networks:
+      - zeebe_network
+    depends_on:
+      - node0
+  node2:
+    container_name: zeebe_broker_3-0.23.0-alpha2
+    image: camunda/zeebe:0.23.0-alpha2
+    environment:
+      - ZEEBE_LOG_LEVEL=info
+      - ZEEBE_BROKER_CLUSTER_NODEID=1
+      - ZEEBE_BROKER_CLUSTER_PARTITIONSCOUNT=3
+      - ZEEBE_BROKER_CLUSTER_CLUSTERSIZE=3
+      - ZEEBE_BROKER_CLUSTER_REPLICATIONFACTOR=3
+      - ZEEBE_BROKER_CLUSTER_INITIALCONTACTPOINTS=node-0:26502
+    networks:
+      - zeebe_network
+    depends_on:
+      - node1

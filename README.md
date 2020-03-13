@@ -5,7 +5,7 @@ These templates are intended to quickly spin up a Zeebe node or cluster and take
 
 ### Templates
 * Zeebe Standalone Broker (latest, 0.22.2) - Zeebe workflow engine with a single broker
-* Zeebe Cluster S (0.22.2) - Small Zeebe workflow engine cluster with three brokers and a gateway
+* Zeebe Cluster S (0.23.0-alpha2, 0.22.2) - Small Zeebe workflow engine cluster with three brokers and a gateway
 
 ### Broken templates (a.k.a work in progress)
 * Zeebe Broker + Operate - Zeebe workflow engine with a broker and Operate frontend

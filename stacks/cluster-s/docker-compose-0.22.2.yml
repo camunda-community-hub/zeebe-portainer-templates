@@ -9,11 +9,11 @@ services:
     container_name: gateway-0.22.2
     image: camunda/zeebe:0.22.2
     environment:
-      - ZEEBE_LOG_LEVEL=debug
+      - ZEEBE_LOG_LEVEL=info
       - ZEEBE_STANDALONE_GATEWAY=true
       - ZEEBE_GATEWAY_CONTACT_POINT=node0:26502
-      - ZEEBE_GATEWAY_CLUSTER_PORT=26502
       - ZEEBE_GATEWAY_CLUSTER_HOST=gateway
+      - ZEEBE_GATEWAY_CLUSTER_PORT=26502
     ports:
       - "26500:26500"
     networks:
@@ -22,7 +22,7 @@ services:
     container_name: zeebe_broker_1-0.22.2
     image: camunda/zeebe:0.22.2
     environment:
-      - ZEEBE_LOG_LEVEL=debug
+      - ZEEBE_LOG_LEVEL=info
       - ZEEBE_NODE_ID=0
       - ZEEBE_PARTITIONS_COUNT=2
       - ZEEBE_REPLICATION_FACTOR=3
@@ -36,7 +36,7 @@ services:
     container_name: zeebe_broker_2-0.22.2
     image: camunda/zeebe:0.22.2
     environment:
-      - ZEEBE_LOG_LEVEL=debug
+      - ZEEBE_LOG_LEVEL=info
       - ZEEBE_NODE_ID=1
       - ZEEBE_PARTITIONS_COUNT=2
       - ZEEBE_REPLICATION_FACTOR=3
@@ -50,7 +50,7 @@ services:
     container_name: zeebe_broker_3-0.22.2
     image: camunda/zeebe:0.22.2
     environment:
-      - ZEEBE_LOG_LEVEL=debug
+      - ZEEBE_LOG_LEVEL=info
       - ZEEBE_NODE_ID=2
       - ZEEBE_PARTITIONS_COUNT=2
       - ZEEBE_REPLICATION_FACTOR=3
