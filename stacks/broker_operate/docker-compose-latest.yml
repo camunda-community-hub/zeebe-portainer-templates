@@ -5,8 +5,8 @@ networks:
 
 services:
   zeebe:
-    container_name: zeebe_broker-operate_broker_0.23.0-alpha2
-    image: camunda/zeebe:0.23.0-alpha2
+    container_name: zeebe_broker-operate_broker
+    image: camunda/zeebe:latest
     environment:
       - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_CLASSNAME=io.zeebe.exporter.ElasticsearchExporter
       - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_URL=http://elasticsearch:9200
@@ -33,8 +33,8 @@ services:
     networks:
       - zeebe_network
   operate:
-    container_name: zeebe_broker-operate_operate_0.23.0-alpha2
-    image: camunda/operate:0.23.0-alpha2
+    container_name: zeebe_broker-operate_operate
+    image: camunda/operate:latest
     environment:
       - CAMUNDA_OPERATE_ELASTICSEARCH_CLUSTERNAME=elasticsearch
       - CAMUNDA_OPERATE_ELASTICSEARCH_HOST=elasticsearch
@@ -54,7 +54,7 @@ services:
     networks:
       - zeebe_network
   elasticsearch:
-    container_name: zeebe_broker-operate_elasticsearch_0.23.0-alpha2
+    container_name: zeebe_broker-operate_elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.7.1
     ports:
       - "9200:9200"
@@ -65,7 +65,7 @@ services:
     networks:
       - zeebe_network
   kibana:
-    container_name: zeebe_broker-operate_kibana_0.23.0-alpha2
+    container_name: zeebe_broker-operate_kibana
     image: docker.elastic.co/kibana/kibana-oss:6.7.1
     ports:
       - "5601:5601"
