@@ -18,7 +18,7 @@ Assuming you have Docker and Portainer set up and running:
 1. Open Portainer web console
 1. Click on _Settings_
 1. Toggle _Use external templates_ to _On_
-1. Copy this URL into the input field below the toggle: `https://pihme.github.io/zeebe-portainer-templates/templates.json`
+1. Copy this URL into the input field below the toggle: `https://zeebe-io.github.io/zeebe-portainer-templates/templates.json`
 1. Click _Save Settings_
 1. Click on _Home_ and select the Docker host on which you want to deploy Zeebe
 1. Click on _App Templates_
