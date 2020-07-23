@@ -42,6 +42,7 @@ When deploying a stack of containers, this is not possible.
 #### Running Different Versions
 There are dedicated URLs for different versions of Zeebe:
 * `https://zeebe-io.github.io/zeebe-portainer-templates/templates.json` - Latest stable release of Zeebe/Operate (does include patches). If in doubt, use this URL
+* `https://zeebe-io.github.io/zeebe-portainer-templates/templates-0.24.0.json` - Zeebe/Operate version 0.24.0 (does not include patches)
 * `https://zeebe-io.github.io/zeebe-portainer-templates/templates-0.23.0.json` - Zeebe/Operate version 0.23.0 (does not include patches)
 * `https://zeebe-io.github.io/zeebe-portainer-templates/templates-0.22.2.json` - Zeebe version 0.22.2 (does not include patches)
 
