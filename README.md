@@ -20,7 +20,7 @@ Assuming you have Docker and Portainer set up and running:
 
 1. Open Portainer web console
 1. Click on _Settings_
-1. Copy this _URL_ into the input field under _App Templates_: `https://zeebe-io.github.io/zeebe-portainer-templates/templates.json`
+1. Copy this _URL_ into the input field under _App Templates_: `https://camunda-community-hub.github.io/zeebe-portainer-templates/templates.json`
    > **Note:** the templates are for Portainer 2.0 or higher
 1. Click _Save Settings_
 1. Click on _Home_ and select the Docker host on which you want to deploy Zeebe
