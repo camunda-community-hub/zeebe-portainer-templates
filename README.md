@@ -1,3 +1,5 @@
+<img src="https://img.shields.io/badge/Lifecycle-Stable-brightgreen">
+
 ## About
 
 This project provides [Portainer](https://www.portainer.io/) container templates for [Zeebe](https://zeebe.io/).
