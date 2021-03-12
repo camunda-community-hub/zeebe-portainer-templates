@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Lifecycle-Stable-brightgreen">
+<img src="https://img.shields.io/badge/Lifecycle-Stable-brightgreen" alt="Green Shields.io badge that reads Lifecycle: Stable"> <img src="https://img.shields.io/badge/Community%20Extension-An%20open%20source%20community%20maintained%20project-FF4700" alt="Orange Shields.io badge that reads Community Extension--An open source community maintained project.">
 
 ## About
 
