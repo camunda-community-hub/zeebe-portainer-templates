@@ -9,7 +9,7 @@
             "description": "Zeebe workflow engine with a single broker",
             "categories": ["workflow", "automation"],
             "platform": "linux",
-            "logo": "https://zeebe-io.github.io/zeebe-portainer-templates/assets/zeebe-icon.png",
+            "logo": "https://camunda-community-hub.github.io/zeebe-portainer-templates/assets/zeebe-icon.png",
             "image": "camunda/zeebe:latest",
             "ports": [
               "26500:26500/tcp"
@@ -23,9 +23,9 @@
             "note": "This Operate Trial Version is for testing and non-production use only. The General Terms and Conditions for the Operate Trial Version are available here: https://zeebe.io/legal/operate-evaluation-license/",
             "categories": ["workflow", "automation"],
             "platform": "linux",
-            "logo": "https://zeebe-io.github.io/zeebe-portainer-templates/assets/zeebe-icon.png",
+            "logo": "https://camunda-community-hub.github.io/zeebe-portainer-templates/assets/zeebe-icon.png",
             "repository": {
-              "url": "https://github.com/zeebe-io/zeebe-portainer-templates",
+              "url": "https://github.com/camunda-community-hub/zeebe-portainer-templates",
               "stackfile": "stacks/broker_operate/docker-compose-latest.yml"
             }
           },
@@ -37,9 +37,9 @@
             "note": "Warning: Give Docker at least 8 GB of RAM, otherwise system might become unresponsive",
             "categories": ["workflow", "automation"],
             "platform": "linux",
-            "logo": "https://zeebe-io.github.io/zeebe-portainer-templates/assets/zeebe-icon.png",
+            "logo": "https://camunda-community-hub.github.io/zeebe-portainer-templates/assets/zeebe-icon.png",
             "repository": {
-              "url": "https://github.com/zeebe-io/zeebe-portainer-templates",
+              "url": "https://github.com/camunda-community-hub/zeebe-portainer-templates",
               "stackfile": "stacks/cluster-s/docker-compose-latest.yml"
             }
           }
