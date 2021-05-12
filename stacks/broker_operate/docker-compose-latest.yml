@@ -41,16 +41,12 @@ services:
     image: camunda/operate:latest
     environment:
       - CAMUNDA_OPERATE_ELASTICSEARCH_CLUSTERNAME=elasticsearch
-      - CAMUNDA_OPERATE_ELASTICSEARCH_HOST=elasticsearch
-      - CAMUNDA_OPERATE_ELASTICSEARCH_PORT=9200
-      - CAMUNDA_OPERATE_ZEEBE_BROKERCONTACTPOINT=zeebe:26500
+      - CAMUNDA_OPERATE_ELASTICSEARCH_URL=http://elasticsearch:9200
+      - CAMUNDA_OPERATE_ZEEBE_GATEWAYADDRESS=zeebe:26500
       - CAMUNDA_OPERATE_ZEEBEELASTICSEARCH_CLUSTERNAME=elasticsearch
-      - CAMUNDA_OPERATE_ZEEBEELASTICSEARCH_HOST=elasticsearch
-      - CAMUNDA_OPERATE_ZEEBEELASTICSEARCH_PORT=9200
+      - CAMUNDA_OPERATE_ZEEBEELASTICSEARCH_URL=http://elasticsearch:9200
       - CAMUNDA_OPERATE_ZEEBEELASTICSEARCH_PREFIX=zeebe-record
       - LOGGING_LEVEL_ROOT=INFO
-      #Spring Boot Actuator endpoints to be exposed
-      - MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,info,conditions,configprops,prometheus
     ports:
       - "8080:8080"
     depends_on:
@@ -59,7 +55,7 @@ services:
       - zeebe_network
   elasticsearch:
     container_name: zeebe_broker-operate_elasticsearch
-    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.7.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.12.1
     ports:
       - "9200:9200"
     environment:
@@ -70,7 +66,7 @@ services:
       - zeebe_network
   kibana:
     container_name: zeebe_broker-operate_kibana
-    image: docker.elastic.co/kibana/kibana-oss:6.7.1
+    image: docker.elastic.co/kibana/kibana:7.12.1
     ports:
       - "5601:5601"
     networks:
