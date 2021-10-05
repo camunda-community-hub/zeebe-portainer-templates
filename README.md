@@ -15,7 +15,7 @@ These templates are intended to quickly spin up a Zeebe node or cluster and take
 - Zeebe Broker + Operate - Zeebe workflow engine with a broker and Operate frontend (and elasticsearch, Kibana as part of the backend)
 - Zeebe Cluster S - Small Zeebe workflow engine cluster with three brokers and a gateway
 
-> **Operate License** This Operate trial version is for testing and non-production use only. The General Terms and Conditions for the Operate Trial Version are available here: https://zeebe.io/legal/operate-evaluation-license/
+> **Operate License** This Operate trial version is only for testing and non-production use . The General Terms and Conditions for the Operate Trial Version are available here: https://zeebe.io/legal/operate-evaluation-license/
 
 ### Usage
 
@@ -67,7 +67,7 @@ The default credentials for Operate are:
 
 > **Operate License** This Operate trial version is for testing and non-production use only. The General Terms and Conditions for the Operate Trial Version are available here: https://zeebe.io/legal/operate-evaluation-license/
 
-Later, if you want to gain more control over how Zeebe is deployed, you might want to look at:
+Later, if you want to gain more control over how Zeebe is deployed, you should look at:
 
 - [zeebe-docker-compose](https://github.com/zeebe-io/zeebe-docker-compose): Which contains customizable docker compose files
 - [zeeb-helm](https://helm.zeebe.io/): Which contains helm charts to deploy Zeebe to Kubernetes
