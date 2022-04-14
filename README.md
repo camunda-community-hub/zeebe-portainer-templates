@@ -67,7 +67,6 @@ The default credentials for Operate are:
 
 > **Operate License** This Operate trial version is for testing and non-production use only. The General Terms and Conditions for the Operate Trial Version are available here: https://zeebe.io/legal/operate-evaluation-license/
 
-Later, if you want to gain more control over how Zeebe is deployed, you might want to look at:
+### Camunda Platform Helm
 
-- [zeebe-docker-compose](https://github.com/zeebe-io/zeebe-docker-compose): Which contains customizable docker compose files
-- [zeeb-helm](https://helm.zeebe.io/): Which contains helm charts to deploy Zeebe to Kubernetes
+[camunda-platform-helm](https://helm.camunda.io/) Contains helm charts to deploy Zeebe, Operate, Tasklist, IAM to Kubernetes
