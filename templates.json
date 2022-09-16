@@ -61,7 +61,7 @@
         "automation"
       ],
       "platform": "linux",
-      "logo": "https://camunda-community-hub.github.io/zeebe-portainer-templates/assets/zeebe-icon.png",
+      "logo": "https://raw.githubusercontent.com/camunda/camunda-platform-docs/main/static/img/black-C.png",
       "repository": {
         "url": "https://github.com/camunda/camunda-platform",
         "stackfile": "docker-compose-core.yaml"
@@ -77,7 +77,7 @@
         "automation"
       ],
       "platform": "linux",
-      "logo": "https://camunda-community-hub.github.io/zeebe-portainer-templates/assets/zeebe-icon.png",
+      "logo": "https://raw.githubusercontent.com/camunda/camunda-platform-docs/main/static/img/black-C.png",
       "repository": {
         "url": "https://github.com/camunda/camunda-platform",
         "stackfile": "docker-compose.yaml"
