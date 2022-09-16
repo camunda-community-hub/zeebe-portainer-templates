@@ -40,14 +40,22 @@ Assuming you have Docker and Portainer set up and running:
 
 ### Troubleshooting
 
+**Port Already Taken**
+
 The most common reason why a deployment fails is that the port `26500` or the name of one of the containers is already in use.
 
 When deploying a single container, you can modify both on the screen where you do the deployment:
 
-### Customizing Container
-
 Before deploying the template, you can enter a name for the container. You can also select _Show advanced options_. This allows you, among others, to specify the port mapping.
 When deploying a stack of containers, this is not possible.
+
+**Invalid parameter: redirect URI**
+
+This happens when you use the _Camunda Platform_ template and try to open Operate or Tasklist from the Portainer UI.
+This opens the apps under `http://0.0.0.0:[PORT]` which results in an invalid redirect URL.
+
+Simply enter the URL manually as `http://localhost:[PORT]` and you are good to go.
+
 
 ### Restoring Default Templates
 
