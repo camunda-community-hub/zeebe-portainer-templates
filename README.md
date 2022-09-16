@@ -16,6 +16,8 @@ These templates are intended to quickly spin up a Zeebe node or cluster and take
 - Zeebe Standalone Broker - Zeebe workflow engine with a single broker
 - Zeebe Broker + Operate - Zeebe workflow engine with a broker and Operate frontend (and elasticsearch, Kibana as part of the backend)
 - Zeebe Cluster S - Small Zeebe workflow engine cluster with three brokers and a gateway
+- Camunda Platform Core - This is a lightweight configuration with Zeebe, Operate, Tasklist, and Elasticsearch (from https://github.com/camunda/camunda-platform)
+- Camudna Platform - This is a full configuration with Zeebe, Operate, Tasklist, Optimize, Identity, Keycloak, and Elasticsearch (from https://github.com/camunda/camunda-platform)
 
 > **Operate License** This Operate trial version is only for testing and non-production use . The General Terms and Conditions for the Operate Trial Version are available here: https://zeebe.io/legal/operate-evaluation-license/
 
@@ -69,6 +71,6 @@ The default credentials for Operate are:
 
 > **Operate License** This Operate trial version is for testing and non-production use only. The General Terms and Conditions for the Operate Trial Version are available here: https://zeebe.io/legal/operate-evaluation-license/
 
-### Camunda Platform Helm
+### Camunda Platform Resources
 
-[camunda-platform-helm](https://helm.camunda.io/) Contains helm charts to deploy Zeebe, Operate, Tasklist, IAM to Kubernetes
+[Camunda Platform 8](https://github.com/camunda/camunda-platform) Contains links to Docker Compose files and Helm Charts for Camunda Platform 8
