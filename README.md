@@ -5,7 +5,7 @@
 
 ## About
 
-This project provides [Portainer](https://www.portainer.io/) container templates for [Zeebe](https://zeebe.io/).
+This project provides [Portainer](https://www.portainer.io/) container templates for [Zeebe](https://zeebe.io/) and [Camunda Platform](https://github.com/camunda/camunda-platform).
 
 These templates are intended to quickly spin up a Zeebe node or cluster and take it for a test drive. They are not intended or recommended for production.
 
