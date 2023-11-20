@@ -66,7 +66,7 @@ services:
       - zeebe_network
   kibana:
     container_name: zeebe_broker-operate_kibana
-    image: docker.elastic.co/kibana/kibana:7.12.1
+    image: docker.elastic.co/kibana/kibana:7.17.15
     ports:
       - "5601:5601"
     networks:
