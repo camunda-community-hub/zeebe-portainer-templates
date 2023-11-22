@@ -55,7 +55,7 @@ services:
       - zeebe_network
   elasticsearch:
     container_name: zeebe_broker-operate_elasticsearch
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.12.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.1
     ports:
       - "9200:9200"
     environment:
